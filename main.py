@@ -116,19 +116,19 @@ tempTask2 = [{
     "data": []
 },
     {
-    "name": "GH4-d25",
+    "name": "GH4-b25",
     "data": []
 },
     {
-    "name": "GH4-d75",
+    "name": "GH4-b75",
     "data": []
 }]
 
 # --- GENERATE DATA ---
 bRange = [0.25, 0.75]
 
+i = 1
 for br in bRange:
-    i = 1
     for r in dataRange:
         size = [random.randint(10, 1000) for i in range(r)]
         value = [random.randint(100, 10000) for i in range(r)]
@@ -235,11 +235,6 @@ for br in bRange:
 
 
 # - EXCEL -
-# Task 1
-excelExport("results-excel", "task1", tempTask1)
-# Task 2
-excelExport("results-excel", "task2", tempTask2)
-# Task 3
-excelExport("results-excel", "task3-b25", tempTask3_25)
-excelExport("results-excel", "task3-b50", tempTask3_5)
-excelExport("results-excel", "task3-b75", tempTask3_75)
+tasks = ["task1", "task2", "task3b25", "task3b50", "task3b75"]
+templates = [tempTask1, tempTask2, tempTask3_25, tempTask3_5, tempTask3_75]
+excelExport("results-excel", tasks, templates)
